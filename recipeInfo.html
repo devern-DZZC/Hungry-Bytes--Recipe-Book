@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Details</title>
+
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+.topnav {
+  background-color: black;
+  overflow: hidden;
+  display: flex;
+    height: 50px;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  margin-left: 40%;
+  margin-right: 35%;
+}
+
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: rgb(255, 157, 0);
+  color: black;
+}
+
+        #recipe{
+            display: flex;
+            height: 1000px;
+            margin-top: 50px;
+            margin-left: 50px;
+        }
+
+        .recipe-image{
+            display: flex;
+            
+            width: 40%;
+            height: 600px;
+        }
+
+        .recipe-image img{
+            width: 100%;
+            
+        }
+
+        .recipe-info{
+            margin-left: 40px;
+        }
+
+        .macros{
+            display: flex;
+            margin-top: 80px;
+        }
+
+        .nutrient{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-right: solid rgb(205, 205, 205);
+            padding: 25px;
+            width: 150px;
+        }
+
+        .nutrient h2{
+            font-size: 2rem;
+            margin-bottom: 0;
+        }
+
+        .ingredients li, .instructions li{
+            padding: 5px;
+        }
+        .ingredients h2, .instructions h2{
+            border-bottom: solid gainsboro;
+            padding: 20px;
+        }
+
+        footer{
+            display: flex;
+            padding: 10px;
+            border-top: solid gainsboro;
+            margin-top: 75px;
+            height: 50px;
+            background-color: black;
+            color: rgb(255, 157, 0);
+        }
+
+        footer img{
+            height: 100%;
+            width: 75px;
+            margin-left: 35%;
+        }
+
+        .topnav img{
+            height: 100%;
+            width: 125px;
+            float: left;
+            margin-left: 40px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="topnav">
+        <img src="HungryBytesLogoNav.jpg" alt="Hungry Bytes Logo">
+        <a href="main.html">Home</a>
+    </nav>
+
+    <main id="recipe"> </main>
+
+    <footer>
+        <p>Copyright 2024 Hungry Bytes</p>
+        <img src="HungryBytesLogoNav.jpg" alt="Hungry Bytes Logo">
+    </footer>
+
+
+    <script>
+
+        const urlParam = new URLSearchParams(window.location.search);
+        const recipeId = urlParam.get('id');
+        async function getRecipeInfo(id)
+      {
+     const url = `https://tasty.p.rapidapi.com/recipes/get-more-info?id=${id}`;
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '7018175312msh105ca654b44bdcfp181048jsna157a988aa29',
+                'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
+            }
+        };
+    
+        try {
+            const response = await fetch(url, options);
+            const result = await response.json();
+            console.log(result);
+            writeRecipeInfo(result);
+        } catch (error) {
+            console.error(error);
+        }
+      }
+    
+      function writeRecipeInfo(recipe){
+        let result = document.querySelector('#recipe');
+        let instructions = Object.keys(recipe.instructions);
+        let recInstructions=[];
+        for(let i of instructions){
+            recInstructions.push(recipe.instructions[i].display_text);
+        }
+        console.log(recInstructions);
+        let html ="";
+        html += `<div class="recipe-image">
+            <img src="${recipe.thumbnail_url}" alt="recipe-picture">
+
+        <div class="recipe-info">
+            <h1>${recipe.name}</h1>
+            <div class="macros">
+                <div class="nutrient">
+                    <h2>${recipe.nutrition.protein}g</h2>
+                    <p>Protein</p>
+                </div>
+                <div class="nutrient">
+                    <h2>${recipe.nutrition.carbohydrates}g</h2>
+                    <p>Carbohydrates</p>
+                </div>
+                <div class="nutrient">
+                    <h2>${recipe.nutrition.fat}g</h2>
+                    <p>Fat</p>
+                </div>
+                <div class="nutrient">
+                    <h2>${recipe.nutrition.calories}</h2>
+                    <p>Calories</p>
+                </div>
+            </div>
+
+            <div class="instructions">
+                <h2>Instructions</h2>
+                <ol>
+                    ${recInstructions.map(instr => `<li>${instr}</li>`).join('')}
+                </ol>
+            </div>
+        </div>`;
+    result.innerHTML = html;
+      }
+      getRecipeInfo(recipeId);
+    </script>
+</body>
+</html>
