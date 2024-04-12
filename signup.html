@@ -1,4 +1,12 @@
-<title>Sign Up</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+</head>
+
+
 <style>
     body{
         display: flex;
@@ -55,9 +63,6 @@
         cursor: pointer;
         background-color: rgb(255, 209, 123);
     }
-    #button:active{
-        background-color: rgb(245, 224, 186);
-    }
 
     .topnav {
   background-color: black;
@@ -90,6 +95,7 @@
             float: left;
             margin-left: 40px;
         }
+
         footer{
             display: flex;
             padding: 10px;
@@ -103,16 +109,73 @@
         footer img{
             height: 100%;
             width: 75px;
-            margin-left: 35%;
+            margin-left: 345px;
         }
+
+        @media screen and (max-width: 600px){
+
+          .topnav img{
+            margin-left: 5px;
+            width: 50px;
+          }
+
+          .topnav a{
+            font-size: 14px;
+            margin-left: 27%;
+            margin-top: 3px;
+          }
+          
+          main {
+            margin-top: 20px;
+          }
+
+          #myForm{
+            width: 250px;
+            height: 550px;
+           margin-bottom: 60px;
+            margin-right: 20px;
+            margin-top: 50px;
+          }
+          .field{
+        padding: 20px;
+        width: 125px;
+        font-size: 1rem;
+          }
+          main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          footer{
+            height: 25px;
+        }
+        
+        footer p{
+            margin-top: 8px;
+            font-size: 8px;
+        }
+
+        footer img{
+            width: 30px;
+            margin-left: 20%;
+        }
+
+        }
+
+
 </style>
+
+<body>
 <nav class="topnav">
     <img src="HungryBytesLogoNav.jpg" alt="Hungry Bytes Logo">
     <a href="main.html">Home</a>
   </nav>
     <main>
+        <div id="top">
         <form id="myForm" class="col s12" >
             <h1>Sign Up</h1>
+            <div class="pop">
           <div class="row">
             <div class="input-field col s12">
                 <label for="username"></label>
@@ -120,6 +183,7 @@
               
             </div>
           </div>
+          
           <div class="row">
             <div class="input-field col s12">
                 <label for="Password"></label>
@@ -132,6 +196,7 @@
               <input class="field"placeholder="Email" name="email"type="email" required>
             </div>
           </div>
+          </div>
                     
           <div class="row">
             <div class="col">
@@ -140,11 +205,13 @@
           </div>
          
         </form>
+      </div>
     </main>
     <footer>
         <p>Copyright 2024 Hungry Bytes</p>
         <img src="HungryBytesLogoNav.jpg" alt="Hungry Bytes Logo">
     </footer>
+</body>
 
   <script>
 function submit(event){
@@ -160,10 +227,10 @@ function submit(event){
         data[key] = value;
     }
 
-    postData('https://hungry-bytes-recipe-book-c8457-default-rtdb.firebaseio.com/:users', data);
+   // postData('https://nmendezapps.firebaseio.com/users.json', data);
     console.log(data);
-    myForm.reset();
     alert('Login Successful!');
+    myForm.reset();
 }
 
 //attach the submit function to the submit event of myForm    
@@ -189,3 +256,4 @@ async function postData(url, data){
    }
 }
   </script>
+</html>

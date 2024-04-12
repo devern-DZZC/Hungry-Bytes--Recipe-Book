@@ -7,10 +7,11 @@
 
     <style>
 
-        body{
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        .topnav {
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    }
+
+.topnav {
   overflow: hidden;
   background-color:black;
   display: flex;
@@ -26,8 +27,8 @@
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-  margin-left: 35%;
-  margin-right: 25%;
+  margin-left: 33%;
+  margin-right: 22%;
 }
 
 .topnav img{
@@ -76,16 +77,6 @@
     margin-left: -5px;
 }
 
-@media screen and (max-width: 600px) {
-  .topnav a, .topnav input[type=search] {
-    float: none;
-    display: block;
-    text-align: left;
-    width: 100%;
-    margin: 0;
-    padding: 14px;
-  }
-}
   .topnav input[type=search] {
     border: 1px solid #ccc;
   }
@@ -108,14 +99,11 @@
 
         .food-info{
             margin-left: 20px;
-            margin-top: 10px;
         }
 
         .food-info a{
+            margin-top: 10px;
             font-size: 22px;
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
         }
 
         .food-image{
@@ -162,8 +150,97 @@
         footer img{
             height: 100%;
             width: 75px;
-            margin-left: 35%;
+            margin-left: 29%;
         }
+
+
+        @media screen and (max-width: 450px) {
+
+        .topnav {
+            width: 100%;
+            overflow: visible;
+            margin-bottom: 25px;
+        }
+
+        .topnav img {
+            margin-left: 25px;
+            width: 70px;
+        }
+
+        .topnav a{
+            margin-left: 5px;
+            font-size: 14px;
+            margin-top: 3px;
+        }
+
+        #searchKey{
+            font-size: 12px;
+        }
+
+        .searchBox button {
+            font-size: 12px;
+            width: 95px;
+            height: 30px;
+        }
+
+        .searchBox{
+            float:none;
+            margin-left: -55px;
+            margin-top: 9px;
+            width: 200px;
+            display: flex;
+            height: 20px;
+        }
+
+            .topnav input[type=search] {
+            float: none;
+            display: block;
+            text-align: left;
+            width: 100%;
+            margin: 0;
+            padding: 14px;
+            }
+
+        #result{
+            font-size: 20px;
+            margin-left: 50px;
+        }
+        
+        #food-display{
+            margin-top: 0px;
+        }
+
+        #main-display{
+                width: 390px;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+            }
+            .category{
+                justify-content: center;
+            }
+
+            .food-container{
+                width:275px;
+            }
+        footer{
+            height: 25px;
+        }
+        
+        footer p{
+            margin-top: 8px;
+            margin-left: 25px;
+            font-size: smaller;
+        }
+
+        footer img{
+            margin-left: 25px;
+            width: 75px;
+            height: 100%;
+        }
+
+    }
 
     </style>
 </head>
@@ -230,10 +307,9 @@ function drawCard(record){
     result.innerHTML = html;
 }
 
-let resultName = searchKey.charAt(0).toUpperCase() + searchKey.slice(1);
 async function loadRecipes(){
     result = document.querySelector('#result')
-    result.innerHTML = `Search Results for ${resultName}...`;
+    result.innerHTML = `Search Results for ${searchKey}`;
     let results = [];
     recipes = await getRecipes();
     for(let rec of recipes){
