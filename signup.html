@@ -55,6 +55,9 @@
         cursor: pointer;
         background-color: rgb(255, 209, 123);
     }
+    #button:active{
+        background-color: rgb(245, 224, 186);
+    }
 
     .topnav {
   background-color: black;
@@ -157,8 +160,10 @@ function submit(event){
         data[key] = value;
     }
 
-   // postData('https://nmendezapps.firebaseio.com/users.json', data);
+    postData('https://hungry-bytes-recipe-book-c8457-default-rtdb.firebaseio.com/:users', data);
     console.log(data);
+    myForm.reset();
+    alert('Login Successful!');
 }
 
 //attach the submit function to the submit event of myForm    
