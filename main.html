@@ -82,6 +82,7 @@
         color: black;
         cursor: pointer;
         }
+
         #sidebar{
         overflow-y: scroll;
         max-height: 100%;
@@ -233,14 +234,11 @@
 
         .food-info{
             margin-left: 20px;
-            margin-top: 10px;
         }
 
         .food-info a{
+            margin-top: 10px;
             font-size: 22px;
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
         }
 
         .food-image{
@@ -276,6 +274,96 @@
             width: 75px;
             margin-left: 35%;
         }
+
+        
+
+        @media screen and (max-width: 600px) {
+
+            #sidebar{
+                width: 100%;
+            }
+
+            #sidebar h2{
+                text-align: center;
+            }
+
+            #logo{
+                margin-left: 30%;
+            }
+
+            #top{
+                display: flex;
+            }
+
+            #pop{
+                display:flex;
+                flex-wrap: wrap;
+            }
+
+            #pop .widget{
+                width: 20%;
+            }
+
+            .widget{
+                width: 50%;
+            }
+
+            .pop-food{
+                width: 175px;
+                height: 100px;
+            }
+
+            #main-nav{
+                width: 100%;
+            }
+
+            #search{
+                width: 100%;
+            }
+
+            #search h1{
+                text-align: center;
+            }
+
+            #searchKey{
+                font-size: 10px;
+            }
+
+            .searchBox button{
+                font-size: 10px;
+                padding-right: 45px;
+            }
+
+            .topnav{
+                flex-wrap: wrap;
+                flex-direction: column;
+                height: 400px;
+            }
+
+            .topnav a{
+                width: 100%;
+            }
+            
+            #main-display h1{
+                font-size: 20px;
+               justify-content: center;
+            }
+
+            #main-display{
+                width: 500px;
+                justify-content: center;
+            }
+            .category{
+                justify-content: center;
+            }
+
+            .food-container{
+                width:350px;
+               
+
+        }
+    }
+
     </style>
 </head>
 <body>
@@ -287,10 +375,11 @@
             <div id="logo">
                 <img src="hungryBytesLogoMain-removebg.png" alt="Hungry Bytes Logo">
             </div>
+            <div id="top">
             <div onclick="navigate('signup.html')" class="widget">
                 <a href="signup.html">Sign Up</a>
             </div>
-            
+            </div>
         </div>
         <div id="pop-recipes">
             <h2 style="width:100%;">Suggested Recipes</h2>
@@ -328,6 +417,7 @@
 
         <div>
             <h2>Search by Popular Ingredients</h2>
+            <div id="pop">
             <div onclick="quickSearch('cheese')"class="widget">
                 <a>Cheese</a>
             </div>
@@ -360,6 +450,7 @@
             </div>
             <div onclick="quickSearch('pepper')"class="widget">
                 <a>Pepper</a>
+            </div>
             </div>
         </div>
     </div>
@@ -401,4 +492,4 @@
     
 </script>
 </body>
-<html/>
+</html>
