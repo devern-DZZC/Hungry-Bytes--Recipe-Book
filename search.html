@@ -99,11 +99,14 @@ body{
 
         .food-info{
             margin-left: 20px;
+            margin-top: 10px;
         }
 
         .food-info a{
-            margin-top: 10px;
             font-size: 22px;
+            text-decoration: none;
+            font-weight: bold;
+            color: black;
         }
 
         .food-image{
@@ -307,9 +310,10 @@ function drawCard(record){
     result.innerHTML = html;
 }
 
+let searchRes = searchKey.charAt(0).toUpperCase() + searchKey.slice(1);
 async function loadRecipes(){
     result = document.querySelector('#result')
-    result.innerHTML = `Search Results for ${searchKey}`;
+    result.innerHTML = `Search Results for ${searchRes}...`;
     let results = [];
     recipes = await getRecipes();
     for(let rec of recipes){
