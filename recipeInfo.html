@@ -10,6 +10,7 @@
             display: flex;
             flex-direction: column;
             font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
         }
 
 .topnav {
@@ -40,20 +41,20 @@
 
         #recipe{
             display: flex;
-            height: 1000px;
             margin-top: 50px;
             margin-left: 50px;
         }
+        
 
         .recipe-image{
             display: flex;
-            
             width: 40%;
-            height: 600px;
+           
         }
 
         .recipe-image img{
             width: 100%;
+            height: 600px;
             
         }
 
@@ -156,10 +157,15 @@
         let result = document.querySelector('#recipe');
         let instructions = Object.keys(recipe.instructions);
         let recInstructions=[];
+        let recIngredients=[];
         for(let i of instructions){
             recInstructions.push(recipe.instructions[i].display_text);
         }
-        console.log(recInstructions);
+        let sections = Object.keys(recipe.sections[0]);
+        let components = recipe.sections[0].components;
+        components.forEach(component => {
+            recIngredients.push(component.raw_text);
+        });
         let html ="";
         html += `<div class="recipe-image">
             <img src="${recipe.thumbnail_url}" alt="recipe-picture">
@@ -183,6 +189,13 @@
                     <h2>${recipe.nutrition.calories}</h2>
                     <p>Calories</p>
                 </div>
+            </div>
+
+            <div class="instructions">
+                <h2>Ingredients</h2>
+                <ul>
+                    ${recIngredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
+                </ul>
             </div>
 
             <div class="instructions">
