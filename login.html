@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+</head>
+
+
+<style>
+    body{
+        display: flex;
+        font-family: Arial, Helvetica, sans-serif;
+        flex-direction: column;
+        background-color: rgb(251, 240, 208);
+    }
+
+    main{
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #myForm{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       
+        height: 590px;
+        width: 500px;
+        align-content: space-around;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+    }
+
+    .row{
+        margin-bottom: 30px;
+        margin-top: 20px;
+    }
+    .field{
+        border: none;
+        border-bottom: solid gainsboro;
+        padding: 20px;
+        width: 325px;
+        font-size: 1rem;
+    }
+
+    #button{
+        border: none;
+        padding: 15px;
+        width: 200px;
+        border-radius: 25px;
+        font-size: 1rem;
+        margin-top: 15px;
+        background-color: rgb(255, 153, 0);
+        font-weight: 600;
+    }
+
+    #button:hover{
+        cursor: pointer;
+        background-color: rgb(255, 209, 123);
+    }
+
+    .topnav {
+  background-color: black;
+  overflow: hidden;
+  display: flex;
+    height: 50px;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  margin-left: 35%;
+  margin-right: 35%;
+}
+
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: rgb(255, 157, 0);
+  color: black;
+}
+.topnav img{
+            height: 100%;
+            width: 125px;
+            float: left;
+            margin-left: 40px;
+        }
+
+        footer{
+            display: flex;
+            padding: 10px;
+            border-top: solid gainsboro;
+            margin-top: 75px;
+            height: 50px;
+            background-color: black;
+            color: rgb(255, 157, 0);
+        }
+
+        footer img{
+            height: 100%;
+            width: 75px;
+            margin-left: 35%;
+            margin-right: 35%;
+        }
+        .login{
+          margin-top: -15px;
+        }
+        .login a{
+        color: blue;
+}
+
+        @media screen and (max-width: 600px){
+
+          .topnav img{
+            margin-left: 5px;
+            width: 50px;
+          }
+
+          .topnav a{
+            font-size: 14px;
+            margin-left: 27%;
+            margin-top: 3px;
+          }
+          
+          main {
+            margin-top: 20px;
+          }
+
+          #myForm{
+            width: 250px;
+            height: 550px;
+           margin-bottom: 60px;
+            margin-right: 20px;
+            margin-top: 50px;
+          }
+          .field{
+        padding: 20px;
+        width: 125px;
+        font-size: 1rem;
+          }
+          main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          footer{
+            height: 25px;
+        }
+        
+        footer p{
+            margin-top: 8px;
+            font-size: 8px;
+        }
+
+        footer img{
+            width: 30px;
+            margin-left: 50%;
+            margin-right: 50%;
+        }
+        .login p{
+            font-size: smaller;
+        }
+        #myForm h1{
+          font-size: 30px;
+        }
+
+        }
+
+
+</style>
+
+<body>
+<nav class="topnav">
+    <img src="HungryBytesLogoNav.jpg" alt="Hungry Bytes Logo">
+    <a href="main.html">Home</a>
+  </nav>
+    <main>
+        <div id="top">
+        <form id="myForm" class="col s12" >
+            <h1>Login Here</h1>
+            <div class="pop">
+              <div class="row">
+                <div class="input-field col s12">
+                    <label for="email"></label>
+                  <input id="email" class="field"placeholder="Email" name="email"type="email" required>
+                </div>
+              </div>
+          <div class="row">
+            <div class="input-field col s12">
+                <label for="Password"></label>
+              <input id="password" class="field"placeholder="Password" name="password"type="password"  required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
+            </div>
+          </div>
+          
+          </div>
+                    
+          <div class="row">
+            <div class="col">
+              <input id="button"type="submit" class="btn waves-effect waves-light blue" value="Log In" required/>
+            </div>
+          </div>
+          <div class="login">
+            <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+          </div>
+         
+        </form>
+      </div>
+    </main>
+    <footer>
+        <p>Copyright 2024 Hungry Bytes</p>
+        <img src="HungryBytesLogoNav.jpg" alt="Hungry Bytes Logo">
+    </footer>
+</body>
+
+  <script type="module" src="login.js" defer></script>
+</html>
