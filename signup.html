@@ -83,6 +83,10 @@
   margin-right: 35%;
 }
 
+.login a{
+  color: blue;
+}
+
 
 /* Change the color of links on hover */
 .topnav a:hover {
@@ -111,6 +115,9 @@
             width: 75px;
             margin-left: 35%;
             margin-right: 35%;
+        }
+        .login{
+          margin-top: -15px;
         }
 
         @media screen and (max-width: 600px){
@@ -162,6 +169,13 @@
             margin-left: 50%;
             margin-right: 50%;
         }
+        .login p{
+            font-size: 12.5px;
+        }
+
+        #myForm h1{
+          font-size: 25px;
+        }
 
         }
 
@@ -176,34 +190,30 @@
     <main>
         <div id="top">
         <form id="myForm" class="col s12" >
-            <h1>Sign Up</h1>
+            <h1>Create Account</h1>
             <div class="pop">
-          <div class="row">
-            <div class="input-field col s12">
-                <label for="username"></label>
-              <input class="field"name="username" placeholder="Username" minlength="8" required>
-              
-            </div>
-          </div>
-          
+              <div class="row">
+                <div class="input-field col s12">
+                    <label for="email"></label>
+                  <input id="email" class="field"placeholder="Email" name="email"type="email" required>
+                </div>
+              </div>
           <div class="row">
             <div class="input-field col s12">
                 <label for="Password"></label>
-              <input class="field"placeholder="Password" name="password"type="password"  required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
+              <input id="password" class="field"placeholder="Password" name="password"type="password"  required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
             </div>
           </div>
-          <div class="row">
-            <div class="input-field col s12">
-                <label for="email"></label>
-              <input class="field"placeholder="Email" name="email"type="email" required>
-            </div>
-          </div>
+          
           </div>
                     
           <div class="row">
             <div class="col">
               <input id="button"type="submit" class="btn waves-effect waves-light blue" value="Sign Up" required/>
             </div>
+          </div>
+          <div class="login">
+            <p>Already have an account? <a href="login.html">Log in</a></p>
           </div>
          
         </form>
@@ -215,47 +225,5 @@
     </footer>
 </body>
 
-  <script>
-function submit(event){
-    event.preventDefault();//prevents page redirection
-        
-    //event target returns the element on which the event is fired upon ie event.target === myForm
-
-    const myForm = event.target;
-    const formData = new FormData(myForm);//get form data
-   // const data = Object.fromEntries(formData);//convert form data to object
-   const data = {};
-    for (const [key, value] of formData.entries()) {
-        data[key] = value;
-    }
-
-   // postData('https://nmendezapps.firebaseio.com/users.json', data);
-    console.log(data);
-    alert('Login Successful!');
-    myForm.reset();
-}
-
-//attach the submit function to the submit event of myForm    
-document.forms['myForm'].addEventListener('submit', submit);
-
-async function postData(url, data){
-  try{
-
-     let response = await fetch(
-       url, 
-       {
-            method: 'POST',
-            body: JSON.stringify(data),//convert data to JSON string
-          headers: { 'Content-Type':'application/json' }// JSON data
-       },
-     );//1. Send http request and get response
-     
-     let result = await response.text();//2. Get message from response
-     console.log(result);//3. Do something with the message
-   
-   }catch(error){
-     console.log(error);//catch and log any errors
-   }
-}
-  </script>
+  <script type="module" src="signup.js" defer></script>
 </html>
