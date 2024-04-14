@@ -1,17 +1,15 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAjZPxs8HXVbOn-WdHZi2NqMiWsUo2F7lA",
-  authDomain: "hungry-bytes-recipe-book-c8457.firebaseapp.com",
-  databaseURL: "https://hungry-bytes-recipe-book-c8457-default-rtdb.firebaseio.com",
-  projectId: "hungry-bytes-recipe-book-c8457",
-  storageBucket: "hungry-bytes-recipe-book-c8457.appspot.com",
-  messagingSenderId: "455884248302",
-  appId: "1:455884248302:web:931200507947d195ed4fff"
+  apiKey: "AIzaSyCkmW8LWmDzP0QUTQ1RA3lAGb8G8V3P8GE",
+  authDomain: "hungry-bytes-cabc1.firebaseapp.com",
+  projectId: "hungry-bytes-cabc1",
+  storageBucket: "hungry-bytes-cabc1.appspot.com",
+  messagingSenderId: "956134518625",
+  appId: "1:956134518625:web:77e50edaf854596b3adf20"
 };
 
 // Initialize Firebase
