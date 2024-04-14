@@ -17,7 +17,7 @@
   background-color: black;
   overflow: hidden;
   display: flex;
-    height: 50px;
+  height: 50px;
 }
 
 /* Style the links inside the navigation bar */
@@ -28,7 +28,7 @@
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-  margin-left: 40%;
+  margin-left: 36%;
   margin-right: 35%;
 }
 
@@ -42,7 +42,7 @@
         #recipe{
             display: flex;
             margin-top: 50px;
-            margin-left: 50px;
+            margin-left: 20px;
         }
         
 
@@ -60,11 +60,13 @@
 
         .recipe-info{
             margin-left: 40px;
+            width: 135%;
         }
 
         .macros{
             display: flex;
             margin-top: 80px;
+            width: 100%;
         }
 
         .nutrient{
@@ -103,15 +105,80 @@
         footer img{
             height: 100%;
             width: 75px;
-            margin-left: 35%;
+            margin-left: 29%;
+            margin-right: 35%;
         }
 
         .topnav img{
             height: 100%;
-            width: 125px;
+            width: 95px;
             float: left;
             margin-left: 40px;
         }
+
+    @media screen and (max-width: 600px){
+
+        .topnav img{
+            margin-left: 5px;
+            width: 50px;
+        }
+
+        .topnav a{
+            font-size: 14px;
+            margin-left: 27%;
+            margin-top: 3px;
+        }
+
+        .recipe-image{
+            width: 94%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .recipe-image img{
+            margin-left: 10px;
+            width: fit-content;
+            max-width: 347px;
+            height:fit-content;
+            max-height: 347px;
+        }
+
+        #recipe {
+            margin-top: 25px;
+            flex-direction: column;
+            margin-left: 10px;
+        }
+
+        .recipe-info{
+            display: flex;
+            flex-direction: column;
+            margin-left: 0px;
+            width: 100%;
+        }
+
+        .recipe-info h1{
+            text-align: center;
+        }
+
+        .macros{
+            margin-top: 5px;
+            width: 94%;
+        }
+
+        .nutrient{
+            padding: 12px;
+        }
+
+        footer p{
+           font-size: smaller;
+          }
+
+        footer img{
+            width: 65px;
+            margin-right: 1%;
+        }
+    }
+
     </style>
 </head>
 <body>
