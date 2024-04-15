@@ -119,6 +119,7 @@
             font-size: 15px;
             font-family: Arial, Helvetica, sans-serif;
             margin-left: 10px;
+            text-align:center;
         }
 
         .pop-food{
@@ -292,7 +293,7 @@
             }
 
             #logo{
-                margin-left: 30%;
+                margin-left: 26%;
             }
 
             #top{
@@ -305,11 +306,15 @@
             }
 
             #pop .widget{
-                width: 20%;
+                width: 25%;
             }
 
             .widget{
-                width: 50%;
+                width: 100%;
+            }
+
+            #top a{
+                margin-left: 41%;
             }
 
             .pop-food{
@@ -363,11 +368,16 @@
 
             .food-container{
                 width:350px;
-        }
-        #top .widget{
-              width: 300px;
+                height: 600px;
+             }
+
+            footer p{
+                font-size: smaller;
             }
-              
+
+            footer img{
+                width: 65px;
+            }
     }
 
     </style>
@@ -383,12 +393,12 @@
             </div>
             <div id="top">
             <div onclick="navigate('signup.html')" class="widget">
-                <a href="signup.html" id="signup">Sign Up</a>
+                <a href="signup.html" >Sign Up</a>
             </div>
             </div>
         </div>
         <div id="pop-recipes">
-            <h2 style="width:100%;">Suggested Recipes</h2>
+            <h2 style="width:100%;  text-align: center;">Suggested Recipes</h2>
             <div onclick="quickSearch('burger')"class="pop-food">
                 <div class="pop-image">
                     <img src="https://static.vecteezy.com/system/resources/previews/021/620/229/original/cute-burger-cartoon-icon-illustration-delicious-cheeseburger-food-icon-concept-illustration-suitable-for-icon-logo-sticker-clipart-free-vector.jpg" alt="burger">
@@ -422,7 +432,7 @@
         </div>
 
         <div>
-            <h2>Search by Popular Ingredients</h2>
+            <h2  style="text-align: center;">Search by Popular Ingredients</h2>
             <div id="pop">
             <div onclick="quickSearch('cheese')"class="widget">
                 <a>Cheese</a>
@@ -492,7 +502,7 @@
         </section>
         <footer>
             <p>Copyright 2024 Hungry Bytes</p>
-            <img src="HungryBytesLogoNav.jpg" alt="Hungry Bytes Logo">
+            <img src="HungryBytesLogoNav.JPG" alt="Hungry Bytes Logo">
         </footer>
 <script src="script.js">
     

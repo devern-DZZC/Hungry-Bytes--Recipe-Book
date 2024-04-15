@@ -36,6 +36,10 @@
         transition: 0.3s;
     }
 
+    #myForm h3{
+      margin-top: -18px;
+    }
+
     .row{
         margin-bottom: 30px;
         margin-top: 20px;
@@ -65,11 +69,12 @@
     }
 
     .topnav {
-  background-color: black;
-  overflow: hidden;
-  display: flex;
-    height: 50px;
-}
+      background-color: black;
+      overflow: hidden;
+      display: flex;
+      height: 50px;
+      width: 100%;
+    }
 
 /* Style the links inside the navigation bar */
 .topnav a {
@@ -79,7 +84,7 @@
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-  margin-left: 35%;
+  margin-left: 35.5%;
   margin-right: 35%;
 }
 
@@ -93,9 +98,10 @@
     background-color: rgb(255, 157, 0);
   color: black;
 }
+
 .topnav img{
             height: 100%;
-            width: 125px;
+            width: 95px;
             float: left;
             margin-left: 40px;
         }
@@ -113,7 +119,7 @@
         footer img{
             height: 100%;
             width: 75px;
-            margin-left: 35%;
+            margin-left: 29%;
             margin-right: 35%;
         }
         .login{
@@ -138,17 +144,18 @@
           }
 
           #myForm{
-            width: 250px;
+            width: 340px;
             height: 550px;
-           margin-bottom: 60px;
-            margin-right: 20px;
+            margin-bottom: 60px;
             margin-top: 50px;
           }
+
           .field{
-        padding: 20px;
-        width: 125px;
-        font-size: 1rem;
+            padding: 20px;
+            width: 125px;
+            font-size: 1rem;
           }
+
           main{
             display: flex;
             justify-content: center;
@@ -156,19 +163,18 @@
           }
 
           footer{
-            height: 25px;
-        }
-        
-        footer p{
-            margin-top: 8px;
-            font-size: 8px;
-        }
+            margin-top: 15px;
+          }
 
-        footer img{
-            width: 30px;
-            margin-left: 50%;
-            margin-right: 50%;
-        }
+          footer p{
+           font-size: smaller;
+          }
+
+          footer img{
+            width: 65px;
+            margin-right: 1%;
+          }
+
         .login p{
             font-size: 12.5px;
         }
@@ -184,13 +190,14 @@
 
 <body>
 <nav class="topnav">
-    <img src="HungryBytesLogoNav.jpg" alt="Hungry Bytes Logo">
+    <img src="HungryBytesLogoNav.JPG" alt="Hungry Bytes Logo">
     <a href="main.html">Home</a>
   </nav>
     <main>
         <div id="top">
         <form id="myForm" class="col s12" >
-            <h1>Create Account</h1>
+            <h1>Create an Account</h1>
+            <h3> Sign Up Today!</h3>
             <div class="pop">
               <div class="row">
                 <div class="input-field col s12">
@@ -221,7 +228,7 @@
     </main>
     <footer>
         <p>Copyright 2024 Hungry Bytes</p>
-        <img src="HungryBytesLogoNav.jpg" alt="Hungry Bytes Logo">
+        <img src="HungryBytesLogoNav.JPG" alt="Hungry Bytes Logo">
     </footer>
 </body>
 

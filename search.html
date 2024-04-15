@@ -27,14 +27,14 @@ body{
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-  margin-left: 33%;
+  margin-left: 35.5%;
   margin-right: 22%;
 }
 
 .topnav img{
     float: left;
     height: 100%;
-    width: 125px;
+    width: 95px;
     margin-left: 40px;
 }
 
@@ -220,27 +220,22 @@ body{
                 display: flex;
                 flex-direction: column;
             }
-            .category{
-                justify-content: center;
-            }
+        .category{
+           justify-content: center;
+        }
 
-            .food-container{
-                width:275px;
-            }
-        footer{
-            height: 25px;
+        .food-container{
+            width:350px;
+            height: 600px;
         }
-        
+
         footer p{
-            margin-top: 8px;
-            margin-left: 25px;
-            font-size: smaller;
-        }
+           font-size: smaller;
+          }
 
         footer img{
-            margin-left: 25px;
-            width: 75px;
-            height: 100%;
+            width: 65px;
+            margin-right: 1%;
         }
 
     }
@@ -249,7 +244,7 @@ body{
 </head>
 <body>
     <div class="topnav">
-        <img src="HungryBytesLogoNav.jpg" alt="Hungry Bytes Logo">
+        <img src="HungryBytesLogoNav.JPG" alt="Hungry Bytes Logo">
         <a href="main.html">Home</a>
         <div class="searchBox">
             <input type="search" placeholder="Enter Food" id="searchKey">
@@ -265,7 +260,7 @@ body{
 
       <footer>
         <p>Copyright 2024 Hungry Bytes</p>
-        <img src="HungryBytesLogoNav.jpg" alt="Hungry Bytes Logo">
+        <img src="HungryBytesLogoNav.JPG" alt="Hungry Bytes Logo">
     </footer>
     
 <script>
@@ -317,13 +312,7 @@ async function loadRecipes(){
     let results = [];
     recipes = await getRecipes();
     for(let rec of recipes){
-        // let searchText = rec.name.toLowerCase();
-        // searchKey = searchKey.toLowerCase();
-        // console.log(searchKey);
-        // console.log(searchText);
-        // if ( searchText.search(searchKey) !== -1 ){
             results.push(rec);
-     //   }
     }
     drawCard(results);
 }
