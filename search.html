@@ -312,7 +312,13 @@ async function loadRecipes(){
     let results = [];
     recipes = await getRecipes();
     for(let rec of recipes){
+        // let searchText = rec.name.toLowerCase();
+        // searchKey = searchKey.toLowerCase();
+        // console.log(searchKey);
+        // console.log(searchText);
+        // if ( searchText.search(searchKey) !== -1 ){
             results.push(rec);
+     //   }
     }
     drawCard(results);
 }

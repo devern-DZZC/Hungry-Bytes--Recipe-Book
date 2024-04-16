@@ -5,12 +5,12 @@ import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/fir
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCkmW8LWmDzP0QUTQ1RA3lAGb8G8V3P8GE",
-  authDomain: "hungry-bytes-cabc1.firebaseapp.com",
-  projectId: "hungry-bytes-cabc1",
-  storageBucket: "hungry-bytes-cabc1.appspot.com",
-  messagingSenderId: "956134518625",
-  appId: "1:956134518625:web:77e50edaf854596b3adf20"
+  apiKey: "AIzaSyBvw-tH8dOrprAsyNbWjhR_DY8ZGsfoo-Q",
+  authDomain: "hungry-bytes-fec44.firebaseapp.com",
+  projectId: "hungry-bytes-fec44",
+  storageBucket: "hungry-bytes-fec44.appspot.com",
+  messagingSenderId: "529821800430",
+  appId: "1:529821800430:web:3f3fbc6147e6da7ff720ff"
 };
 
 // Initialize Firebase
