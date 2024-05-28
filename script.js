@@ -5,7 +5,7 @@ async function getRecipes(){
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '7018175312msh105ca654b44bdcfp181048jsna157a988aa2',
+            'X-RapidAPI-Key': '7018175312msh105ca654b44bdcfp181048jsna157a988aa29',
             'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
         }
     };
